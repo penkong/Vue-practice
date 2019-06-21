@@ -1,7 +1,7 @@
 <template>
-  <ul>
+  <ul class="list-group">
     <!-- it make 5 video item for us auto -->
-    <VideoListItem v-for="video in videos" v-bind:video="video"></VideoListItem>
+    <VideoListItem v-for="video in videos" :video="video" :key="video.etag"></VideoListItem>
   </ul>
 </template>
 

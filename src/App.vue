@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <!-- come from componet = we define here -->
     <SearchBar @termChange="onTermChange"></SearchBar>
     <!-- name we pass v-bind:= name of data in parent -->
