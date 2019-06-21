@@ -1,5 +1,8 @@
 <template>
-  <ul>{{ videos.length }}</ul>
+  <ul>
+    <!-- it make 5 video item for us auto -->
+    <VideoListItem v-for="video in videos" v-bind:video="video"></VideoListItem>
+  </ul>
 </template>
 
 <script>
@@ -10,9 +13,10 @@ export default {
   components: {
     VideoListItem
   },
-  props: {
-    videos: Array
-  }
+  props: ["videos"]
+  // props: {
+  //   videos: Array
+  // }
 };
 </script>
 
