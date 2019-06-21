@@ -2,6 +2,8 @@
   <div>
     <!-- come from componet = we define here -->
     <SearchBar @termChange="onTermChange"></SearchBar>
+    <VideoList></VideoList>
+    {{ videos.length }}
   </div>
 </template>
 
@@ -10,13 +12,18 @@
 // comminucate from parent to child props
 import axios from "axios";
 import SearchBar from "./components/SearchBar";
+import VideoList from "./components/VideoList";
 
 const API_KEY = "AIzaSyCZJ14iQvhn3A6lKR5VM9mO18gw5p5XdlM";
 
 export default {
   name: "App",
   components: {
-    SearchBar
+    SearchBar,
+    VideoList
+  },
+  data() {
+    return { videos: [] };
   },
   methods: {
     //event.target.value
@@ -30,7 +37,9 @@ export default {
             q: searchTerm
           }
         })
-        .then(res => console.log(res.data));
+        .then(res => {
+          this.videos = res.data.items;
+        });
     }
   }
 };
