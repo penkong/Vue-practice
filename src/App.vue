@@ -2,8 +2,9 @@
   <div>
     <!-- come from componet = we define here -->
     <SearchBar @termChange="onTermChange"></SearchBar>
-    <VideoList></VideoList>
-    {{ videos.length }}
+    <!-- name we pass v-bind:= name of data in parent -->
+    <VideoList :videos="videos"></VideoList>
+    <!-- {{ videos.length }} -->
   </div>
 </template>
 
@@ -23,6 +24,7 @@ export default {
     VideoList
   },
   data() {
+    //update this props cause app to rerender
     return { videos: [] };
   },
   methods: {
