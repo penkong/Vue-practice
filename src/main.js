@@ -3,7 +3,7 @@ import App from './App.vue';
 
 
 new Vue({
-  el: '#app',
+  // el: '#app',
   //createElement
   render: h => h(App)
-});
+}).$mount('#app');
