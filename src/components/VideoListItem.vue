@@ -19,8 +19,8 @@ export default {
     }
   },
   methods: {
-    onVideoSelect(e) {
-      this.$emit("videoSelect", e.target.value);
+    onVideoSelect() {
+      this.$emit("videoSelect", this.video);
     }
   }
 };

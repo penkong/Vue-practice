@@ -3,7 +3,7 @@
     <!-- come from componet = we define here -->
     <SearchBar @termChange="onTermChange"></SearchBar>
     <!-- name we pass v-bind:= name of data in parent -->
-    <VideoList :videos="videos"></VideoList>
+    <VideoList @videoSelect="onVideoSelect" :videos="videos"></VideoList>
     <!-- {{ videos.length }} -->
   </div>
 </template>
@@ -42,6 +42,9 @@ export default {
         .then(res => {
           this.videos = res.data.items;
         });
+    },
+    onVideoSelect(video) {
+      console.log(video);
     }
   }
 };
