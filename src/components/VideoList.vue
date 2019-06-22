@@ -1,5 +1,5 @@
 <template>
-  <ul class="list-group">
+  <ul class="list-group col-md-5">
     <!-- it make 5 video item for us auto -->
     <VideoListItem
       v-for="video in videos"
