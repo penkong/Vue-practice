@@ -15,4 +15,9 @@ export default {
     AppHeader
   }
 };
+// vuex state, getters make subset, mutations(invidual work which car is sold)
+// like computed wash car, Actions assemble multi mutations to make intelligent change
+// wash car bill car sell car,
 </script>
+
+
