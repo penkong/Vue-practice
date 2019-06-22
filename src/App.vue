@@ -3,6 +3,7 @@
     <!-- come from componet = we define here -->
     <SearchBar @termChange="onTermChange"></SearchBar>
     <!-- name we pass v-bind:= name of data in parent -->
+    <VideoDetail :video="selectedVideo"></VideoDetail>
     <VideoList @videoSelect="onVideoSelect" :videos="videos"></VideoList>
     <!-- {{ videos.length }} -->
   </div>
@@ -14,6 +15,7 @@
 import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
+import VideoDetail from "./components/VideoDetail";
 
 const API_KEY = "AIzaSyCZJ14iQvhn3A6lKR5VM9mO18gw5p5XdlM";
 
@@ -21,11 +23,12 @@ export default {
   name: "App",
   components: {
     SearchBar,
-    VideoList
+    VideoList,
+    VideoDetail
   },
   data() {
     //update this props cause app to rerender
-    return { videos: [] };
+    return { videos: [], selectedVideo: null };
   },
   methods: {
     //event.target.value
@@ -44,7 +47,7 @@ export default {
         });
     },
     onVideoSelect(video) {
-      console.log(video);
+      this.selectedVideo = video;
     }
   }
 };
