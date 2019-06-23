@@ -1,12 +1,21 @@
 <template>
   <div class="ui secondary pointing menu">
     <a class="active item" href="/">Image Storage</a>
+    <div class="right menu">
+      <a class="ui item" @click="login" href="#">Login</a>
+    </div>
   </div>
 </template>
 
 <script>
+//action change data getters retrieve data
+import { mapActions } from "vuex";
+
 export default {
-  name: "AppHeader"
+  name: "AppHeader",
+  methods: {
+    ...mapActions(["login"])
+  }
 };
 </script>
 
