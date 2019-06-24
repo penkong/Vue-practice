@@ -19,6 +19,7 @@ const actions = {
     window.localStorage.setItem('imgur_token', query.access_token);
   },
   //to call mutations we use commit function
+  //first param is object with some helpers allow us modify us module
   logout: ({ commit }) =>{ 
     commit('setToken', null)
   }
