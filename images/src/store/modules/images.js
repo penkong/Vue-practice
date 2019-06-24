@@ -15,9 +15,9 @@ const actions = {
   fetchImages: async ({ rootState, commit }) => { 
     const { token } = rootState.auth;
     const response = await api.fetchImages(token);
-    console.log(response);
-    //always cl response
-    // commit(response);
+    // console.log(response);
+    
+    commit('setImages', response.data.data);
   },
 
   uploadImage: () => {}
