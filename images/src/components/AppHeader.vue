@@ -6,7 +6,7 @@
       <div class="horizontal" v-if="isLoggedIn">
         <a class="item">Galleries</a>
         <a class="item">upload</a>
-        <a class="item">logout</a>
+        <a class="item" @click="logout">logout</a>
       </div>
 
       <a class="ui item" v-else @click="login" href="#">Login</a>
@@ -23,7 +23,7 @@ export default {
   //data read and access by it
   computed: mapGetters(["isLoggedIn"]),
   methods: {
-    ...mapActions(["login"])
+    ...mapActions(["login", "logout"])
   }
 };
 </script>

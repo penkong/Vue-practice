@@ -5,8 +5,9 @@ import App from './App.vue';
 import AuthHandler from './components/AuthHandler';
 
 Vue.use(VueRouter);
-
-const router = new VueRouter({
+//router is for programmatically navigation
+//we need it inside action to make it work use export
+export const router = new VueRouter({
   //cause use browserRouter than hashRouter because of api
   mode: 'history', 
   routes: [
