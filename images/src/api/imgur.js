@@ -1,7 +1,7 @@
 import qs from 'qs';
 import { clientID } from '../config/keys';
 
-const ROOTURL = 'https://api.imgur.com';
+const ROOT_URL = 'https://api.imgur.com';
 
 export default {
   login() {
@@ -9,6 +9,6 @@ export default {
       client_id : clientID,
       response_type: 'token'
     };
-    window.location = `${ROOTURL}/oauth2/authorize?${qs.stringify(querystring)}`;
+    window.location = `${ROOT_URL}/oauth2/authorize?${qs.stringify(querystring)}`;
   }
 }

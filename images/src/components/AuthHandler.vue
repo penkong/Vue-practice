@@ -7,9 +7,7 @@ import { mapActions } from "vuex";
 
 export default {
   name: "AuthHandler",
-  methods: {
-    ...mapActions(["finalizeLogin"])
-  },
+  methods: mapActions(["finalizeLogin"]),
   created() {
     this.finalizeLogin(window.location.hash);
   }

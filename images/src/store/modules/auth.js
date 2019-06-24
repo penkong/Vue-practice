@@ -1,26 +1,27 @@
 import qs from 'qs';
 import api from '../../api/imgur';
+
 const state = {
-  token: null
+  token: window.localStorage.getItem('imgur_token')
 };
 
 const getters = {
-  isLoggedIn: state => {
-    //show falsy value false and vice versa
-    !!state.token
-  }
+  //show falsy value false and vice versa
+  isLoggedIn: state => !!state.token
 };
 //can make actions more complicate to make other 3 simple
 //setToken update token in state
 const actions = {
   login: () => api.login(),
   finalizeLogin: ({ commit }, hash) => {
-    const resToken = qs.parse(hash.replace('#',''));
-    commit('setToken', resToken.access_token);
+    const query = qs.parse(hash.replace('#',''));
+    commit('setToken', query.access_token);
+    window.localStorage.setItem('imgur_token', query.access_token);
   },
   //to call mutations we use commit function
-  logout: ({ commit }) => commit('setToken', null)
-
+  logout: ({ commit }) =>{ 
+    commit('setToken', null)
+  }
 };
 
 const mutations = {
