@@ -23,8 +23,22 @@ export default {
       }
     });
   },
-  uploadImage() {
-    const url = `https://api.imgur.com/3/image`;
-    axios.post(url);
+  //images == fileList
+  uploadImages(images, token) {
+    //formData obj is vanilla js == allow us take ref to file and attach real file to post req
+    const promises = Array.from(images).map(image => {
+      const formData = new FormData();
+      //key file this work attach our file
+      formData.append('image', image);
+      const url = `${ROOT_URL}/3/image`;
+      return axios.post(url, formData , {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+    });
+    //that's make all images upload and bring us probe error
+    //array of promises
+    return Promise.all(promises);
   }
 }
