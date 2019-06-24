@@ -22,5 +22,9 @@ export default {
         Authorization: `Bearer ${token}`
       }
     });
+  },
+  uploadImage() {
+    const url = `https://api.imgur.com/3/image`;
+    axios.post(url);
   }
 }
