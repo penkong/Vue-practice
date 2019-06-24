@@ -7,6 +7,9 @@ const state = {
 const getters = {
   allImages: state => state.images
 };
+
+
+
 //can make actions more complicate to make other 3 simple
 //actions are place for complexity
 const actions = {
@@ -19,8 +22,11 @@ const actions = {
     
     commit('setImages', response.data.data);
   },
+  //images from event
+  uploadImage: async ({ commit }, images) => {
 
-  uploadImage: () => {}
+    console.log(images);
+  }
 };
 
 const mutations = {

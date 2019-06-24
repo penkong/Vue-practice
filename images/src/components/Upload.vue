@@ -1,13 +1,17 @@
 <template>
   <div class="droper">
-    <input type="file">
+    <!-- if we use without $ vue search for event in upload images -->
+    <input multiple type="file" accept="image/*" @change="uploadImage($event.target.files)">
     <span>Drag image here to Upload</span>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
-  name: "Upload"
+  name: "Upload",
+  methods: mapActions(["uploadImage"])
 };
 </script>
 
