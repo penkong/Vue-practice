@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <!-- come from componet = we define here -->
+    <!-- v-on:termChnage -->
     <SearchBar @termChange="onTermChange"></SearchBar>
     <!-- name we pass v-bind:= name of data in parent -->
     <div class="row">
@@ -33,7 +34,7 @@ export default {
     return { videos: [], selectedVideo: null };
   },
   methods: {
-    //event.target.value
+    // searchTerm = event.target.value => second arg on emitter
     onTermChange(searchTerm) {
       axios
         .get("https://www.googleapis.com/youtube/v3/search", {

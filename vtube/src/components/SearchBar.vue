@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- directive v-on:input="onInput" -->
-    <input @input="onInput" type="text">
+    <input @input="onInput" type="text" />
   </div>
 </template>
 
@@ -13,7 +13,10 @@ export default {
   methods: {
     //name of event event + verb
     onInput(e) {
+      // communicate from child to parent by emitting event
+      // emit allow us to listen
       this.$emit("termChange", e.target.value);
+      // communicate from parent to child by props;
     }
   }
 };
