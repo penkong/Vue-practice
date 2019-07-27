@@ -3,10 +3,11 @@
     <!-- come from componet = we define here -->
     <!-- v-on:termChnage -->
     <SearchBar @termChange="onTermChange"></SearchBar>
-    <!-- name we pass v-bind:= name of data in parent -->
     <div class="row">
+      <!-- name we pass v-bind:= name of data in parent -->
       <VideoDetail :video="selectedVideo"></VideoDetail>
-      <VideoList @videoSelect="onVideoSelect" :videos="videos"></VideoList>
+      <!-- directvie for props v-bind:videos='videos' -->
+      <VideoList :videos="videos" @videoSelect="onVideoSelect"></VideoList>
     </div>
     <!-- {{ videos.length }} -->
   </div>
@@ -29,6 +30,8 @@ export default {
     VideoList,
     VideoDetail
   },
+  // in vue comp data must be a func ( it help make data immutable on memory when instnces of component use data)
+  // in instance of vue can be a obj
   data() {
     //update this props cause app to rerender
     return { videos: [], selectedVideo: null };

@@ -1,6 +1,7 @@
 <template>
   <li class="list-group-item media" @click="onVideoSelect">
-    <img class="mr-3" :src="thumbnailUrl">
+    <!-- v-bind:src -->
+    <img class="mr-3" :src="thumbnailUrl" />
     <div class="media-body">{{ titled }}</div>
   </li>
 </template>

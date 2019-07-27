@@ -20,6 +20,7 @@ export default {
   },
   props: ["videos"],
   // props: {
+  //   type checking is good like typescript
   //   videos: Array
   // }
   methods: {
