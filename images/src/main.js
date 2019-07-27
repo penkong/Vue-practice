@@ -9,8 +9,9 @@ import Upload from './components/Upload';
 Vue.use(VueRouter);
 //router is for programmatically navigation
 //we need it inside action to make it work use export
+// export goes to finalize login
 export const router = new VueRouter({
-  //cause use browserRouter than hashRouter because of api
+  //cause use browserRouter rather than hashRouter because of api
   mode: 'history', 
   routes: [
     { path: '/', component: ImageList },

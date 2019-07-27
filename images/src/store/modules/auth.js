@@ -15,6 +15,8 @@ const getters = {
 //setToken update token in state
 const actions = {
   login: () => api.login(),
+  // first param in any action pass is obj that has some helpers tight to it 
+  // window.location.hash come from authHandler.vue
   finalizeLogin: ({ commit }, hash) => {
     const query = qs.parse(hash.replace('#',''));
     commit('setToken', query.access_token);
@@ -31,9 +33,7 @@ const actions = {
 
 const mutations = {
   //second arg provide by action guys
-  setToken: (state, token) => {
-    state.token = token;
-  }
+  setToken: (state, token) => state.token = token
 };
 
 

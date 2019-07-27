@@ -2,6 +2,7 @@
   <div>
     <AppHeader></AppHeader>
     <div class="ui container">
+      <!-- to VueRouter: when any url match routes take and stick it here -->
       <router-view></router-view>
     </div>
   </div>

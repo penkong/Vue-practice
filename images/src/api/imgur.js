@@ -4,12 +4,13 @@ import axios from 'axios';
 import { clientID } from '../config/keys';
 
 const ROOT_URL = 'https://api.imgur.com';
-
+// net work related code its helper
 export default {
   login() {
     const querystring = {
       client_id : clientID,
-      response_type: 'token'
+      response_type: 'token',
+      // state == tag on user when he back to app
     };
     window.location = `${ROOT_URL}/oauth2/authorize?${qs.stringify(querystring)}`;
   },

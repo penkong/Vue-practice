@@ -1,7 +1,7 @@
 <template>
   <div class="droper">
     <!-- if we use without $ vue search for event in upload images -->
-    <input multiple type="file" accept="image/*" @change="uploadImage($event.target.files)">
+    <input multiple type="file" accept="image/*" @change="uploadImage($event.target.files)" />
     <span>Drag image here to Upload</span>
   </div>
 </template>

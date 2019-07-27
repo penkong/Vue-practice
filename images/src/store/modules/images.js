@@ -18,6 +18,7 @@ const actions = {
   //it come from where commit from
   // rootState allow us to reach other modules and access states that are inside them
   fetchImages: async ({ rootState, commit }) => { 
+    // this is auth.js
     const { token } = rootState.auth;
     const response = await api.fetchImages(token);
     // console.log(response);
@@ -25,7 +26,7 @@ const actions = {
     commit('setImages', response.data.data);
   },
   //images from event
-  uploadImage: async ({ rootState, commit }, images) => {
+  uploadImage: async ({ rootState }, images) => {
     // console.log(images); event
     const { token } = rootState.auth;
     await api.uploadImages(images, token);
@@ -35,9 +36,7 @@ const actions = {
 
 const mutations = {
   //first always state sec or third define by us 
-  setImages: (state, images) => {
-    state.images = images;
-  }
+  setImages: (state, images) => state.images = images
 };
 
 

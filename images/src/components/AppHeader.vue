@@ -15,13 +15,15 @@
 </template>
 
 <script>
-//action change data getters retrieve data
+// action change data getters retrieve data
 import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "AppHeader",
-  //data read and access by it
+  // data read and access by it
+  // computed usage is for template and inside component
   computed: mapGetters(["isLoggedIn"]),
+  // changes do by methods
   methods: {
     ...mapActions(["login", "logout"])
   }
